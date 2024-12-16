@@ -1,18 +1,21 @@
-export const getSum = (a, b) => a + b;
-export const castBoolean = (value) => Boolean(value);
-export const capitalize = (text, i) => {
-  if (i < 0 || i >= text.length) {
-    return text;
-  }
-  return text.slice(0, i) + text[i].toUpperCase() + text.slice(i + 1);
-};
-export const countCapitalLetters = (text) => {
-    let count = 0;
-    for (const char of text) {
-        if (char >= 'A' && char <= 'Z') {
-            count++;
-        }
-    }
-    return count;
+
+export const getSquare = (num) => num * num;
+
+export const isEven = (num) => num % 2 === 0;
+
+
+export const castNumber = (value) => {
+  const num = Number(value);
+  return isNaN(num) ? 'given value is not convertible' : num;
 };
 
+export const countVowels = (text) => {
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'];
+  let count = 0;
+  for (const char of text) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+};
