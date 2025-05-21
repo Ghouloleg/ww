@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <form class="form" id="registration-form" novalidate>
+    <h2 class="form__title">Регистрация</h2>
+
+    <label for="name">Имя:</label>
+    <input
+      type="text"
+      id="name"
+      class="form__input"
+      pattern="^[A-Za-zА-Яа-яЁё\s]{2,}$"
+      data-error-message="Только буквы и пробелы, минимум 2 символа"
+      required
+    />
+    <span class="form__input-error" id="name-error"></span>
+
+    <label for="email">Email:</label>
+    <input
+  type="email"
+  id="email"
+  class="form__input"
+  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+  data-error-message="Введите корректный email (например, user@domain.com)"
+  required
+/>
+
+    <span class="form__input-error" id="email-error"></span>
+
+    <label for="payment">Платёжная система:</label>
+    <select
+      id="payment"
+      class="form__input"
+      required
+      data-error-message="Выберите платёжную систему"
+    >
+      <option value="">Выберите</option>
+      <option value="visa">Visa</option>
+      <option value="mastercard">Mastercard</option>
+    </select>
+    <span class="form__input-error" id="payment-error"></span>
+
+    <label for="card">Номер карты:</label>
+<input type="text" id="card" class="form__input" 
+       data-error-message="Требуется ровно 16 цифр (можно с пробелами или дефисами)" required
+       placeholder="0000 0000 0000 0000">
+    <span class="form__input-error" id="card-error"></span>
+
+<label for="payment">Отзыв:</label>
+    <select
+      id="feadback"
+      class="form__input"
+      required
+      data-error-message="оставьте отзыв"
+    >
+      <option value="">как все прошло?</option>
+      <option value="good">Хорошо</option>
+      <option value="bad">Плохо</option>
+    </select>
+
+    <span class="form__input-error" id="payment-error"></span>
+    <button type="submit" class="form__submit" disabled>Зарегистрироваться</button>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
